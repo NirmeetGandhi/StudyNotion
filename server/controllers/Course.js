@@ -208,14 +208,14 @@ exports.getAllCourses = async (req, res) => {
         courseName: true,
         price: true,
         thumbnail: true,
-        instructor: true,
+        instructor: true, 
         ratingAndReviews: true,
         studentsEnrolled: true,
       }
     )
       .populate("instructor")
       .exec()
-
+    console.log(allCourses);
     return res.status(200).json({
       success: true,
       data: allCourses,

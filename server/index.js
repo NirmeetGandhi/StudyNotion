@@ -42,7 +42,7 @@ app.use(
 );
 
 // Connecting to cloudinary
-// cloudinaryConnect();
+cloudinaryConnect();
 
 // Setting up routes
 app.use("/api/v1/auth", userRoutes);
