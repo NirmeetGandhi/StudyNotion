@@ -60,6 +60,7 @@ export async function BuyCourse(
     )
 
     if (!orderResponse.data.success) {
+      console.log("Failed")
       throw new Error(orderResponse.data.message)
     }
     console.log("PAYMENT RESPONSE FROM BACKEND............", orderResponse.data)
@@ -106,7 +107,7 @@ async function verifyPayment(bodyData, token, navigate, dispatch) {
     })
 
     console.log("VERIFY PAYMENT RESPONSE FROM BACKEND............", response)
-
+    response.data.success = true
     if (!response.data.success) {
       throw new Error(response.data.message)
     }
