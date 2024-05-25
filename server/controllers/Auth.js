@@ -23,6 +23,7 @@ exports.signup = async (req, res) => {
       contactNumber,
       otp,
     } = req.body
+    console.log(email)
     // Check if All Details are there or not
     if (
       !firstName ||
@@ -202,6 +203,7 @@ exports.sendotp = async (req, res) => {
       lowerCaseAlphabets: false,
       specialChars: false,
     })
+    console.log(otp)
     const result = await OTP.findOne({ otp: otp })
     console.log("Result is Generate OTP Func")
     console.log("OTP", otp)
